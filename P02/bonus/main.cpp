@@ -7,7 +7,7 @@ int main() {
     std::cout << color1.colorize("Purple") << color2.colorize("Gold") << color3.colorize("Orange") << std::endl;
 
 	int r{0}, g{0}, b{0};
-	std::cout << "Enter red, green, and blue ints (separated by spaces): ";
+	std::cout << "\nEnter red, green, and blue ints (separated by spaces): ";
 	std::cin >> r >> g >> b;
 	Color user_input{r,g,b};
 	std::cout << user_input.colorize(user_input.to_string()) << std::endl;

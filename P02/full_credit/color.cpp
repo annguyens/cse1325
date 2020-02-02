@@ -4,7 +4,6 @@
 #include <string>
 #include "color.h"
 
-
 Color::Color(int red, int green, int blue)
 : _red{red}, _green{green}, _blue{blue} {}
 

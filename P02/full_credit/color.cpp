@@ -15,6 +15,6 @@ std::string Color::to_string()
 
 std::string Color::colorize(std::string text)
 {
-	std::string disp = "\033[38;2;" + std::to_string(_red) + ";" + std::to_string(_green) + ";" +std::to_string(_blue) + ";177m" + text + "\033[0m";
+	std::string disp = "\033[38;2;" + std::to_string(_red) + ";" + std::to_string(_green) + ";" +std::to_string(_blue) + ";177m" + text + " " + "\033[0m";
 	return disp;
 }

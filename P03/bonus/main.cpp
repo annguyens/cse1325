@@ -17,7 +17,6 @@ void fillVector(std::vector<Color>& vect)
 		
 		Color color{r,g,b};
 		vect.push_back(color);
-	 
 	}
 	return;
 }

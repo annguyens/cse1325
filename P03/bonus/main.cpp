@@ -25,7 +25,7 @@ int main() {
 	std::vector<Color> color;
 	int i;
 	fillVector(color);
-	//std::sort(color.begin(),color.end());
+	std::sort(color.begin(),color.end());
 	
 	for(i=0;i<color.size();i++)
 	{

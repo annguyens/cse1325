@@ -12,12 +12,12 @@ public:
 	Color(int red, int green, int blue);
 	Color();
 	std::string to_string();
-	inline bool operator<(Color& rhs);
-	inline bool operator<=(Color&rhs);
-	inline bool operator==(Color &rhs);
-	inline bool operator!=(Color &rhs);
-	inline bool operator>=(Color &rhs);
-	inline bool operator>(Color &rhs);
+	bool operator<(Color& rhs);
+	bool operator<=(Color&rhs);
+	bool operator==(Color &rhs);
+	bool operator!=(Color &rhs);
+	bool operator>=(Color &rhs);
+	bool operator>(Color &rhs);
 	friend std::ostream& operator<<(std::ostream &ost, const Color&color);
 	int magnitude();
 private:

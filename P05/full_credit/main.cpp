@@ -32,9 +32,17 @@ int main()
 	std::cout << "\nEnter quantity (0 to exit) and product index: ";
 	std::cin >> userQuantity >> index;
 
-	if(userQuantity<0 || index <0 || index >>std::size(products))
+	try
 	{
-		
+		if(userQuantity<0 || index <0 || index >>std::size(products))
+		{
+			throw "Bad values entered";
+		}
+	}
+	catch(const std::string &str)
+	{
+		std::cerr << "Error: " << str <<"\n";
+		continue;
 	}
 
 }

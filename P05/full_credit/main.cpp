@@ -11,6 +11,7 @@ int main()
 {
 	int i, userQuantity, index;
 	std::vector<Product*> cart;
+	double Total = 0;
 	Taxfree milk{"Milk", 2.85};
 	Taxfree cookies{"Cookies", 3.99};
 	Taxfree cheese{"Cheese", 0.99};
@@ -20,7 +21,7 @@ int main()
 	
 	Product *products[]{&milk, &cookies, &cheese, &iceCream, &poptarts, &fruitSnacks};	
 	
-	while()
+	while(true)
 	{
 
 		std::cout << "========================\n"
@@ -29,15 +30,29 @@ int main()
 		
 		for(i=0; i<std::size(products); i++)
 		{
-			std::cout << *products[i];
+			std::cout << std::to_string(i) << ") " << *products[i];
+		}
+				
+		if(!cart.empty())
+		{
+			std::cout << "\nCurent Order\n"
+				  << "------------\n";
+			for(i=0; i<cart.size();i++)
+			{
+				std::cout << *cart[i];
+				Total = Total + cart[i]->price();
+			}
+			std::cout << "Total price: $" << Total;
 		}
 	
 		std::cout << "\nEnter quantity (0 to exit) and product index: ";
 		std::cin >> userQuantity >> index;
+		
+		if(userQuantity==0) {break;}
 
 		try
 		{
-			if(userQuantity<0 || index <0 || index >>std::size(products))
+			if(userQuantity<0 || index <0 || index>std::size(products))
 			{
 				throw "Bad values entered";
 			}
@@ -46,7 +61,15 @@ int main()
 		{
 			std::cerr << "Error: " << str <<"\n";
 			continue;
-		}
+		}		
+
+		Product* userProduct= new Product{*products[index]};
+		userProduct->set_quantity(userQuantity);
+		cart.push_back(userProduct);
+
+		std::cout << "\n";
+		
 	}
+	
 
 }

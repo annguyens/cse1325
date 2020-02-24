@@ -20,29 +20,33 @@ int main()
 	
 	Product *products[]{&milk, &cookies, &cheese, &iceCream, &poptarts, &fruitSnacks};	
 	
-	std::cout << "========================\n"
-		  << "  Welcome to the Store  \n"
-		  << "========================\n" << std::endl;	
-	
-	for(i=0; i<std::size(products); i++)
+	while()
 	{
-		std::cout << *products[i];
-	}
-	
-	std::cout << "\nEnter quantity (0 to exit) and product index: ";
-	std::cin >> userQuantity >> index;
 
-	try
-	{
-		if(userQuantity<0 || index <0 || index >>std::size(products))
+		std::cout << "========================\n"
+			  << "  Welcome to the Store  \n"
+			  << "========================\n" << std::endl;	
+		
+		for(i=0; i<std::size(products); i++)
 		{
-			throw "Bad values entered";
+			std::cout << *products[i];
 		}
-	}
-	catch(const std::string &str)
-	{
-		std::cerr << "Error: " << str <<"\n";
-		continue;
+	
+		std::cout << "\nEnter quantity (0 to exit) and product index: ";
+		std::cin >> userQuantity >> index;
+
+		try
+		{
+			if(userQuantity<0 || index <0 || index >>std::size(products))
+			{
+				throw "Bad values entered";
+			}
+		}
+		catch(const std::string &str)
+		{
+			std::cerr << "Error: " << str <<"\n";
+			continue;
+		}
 	}
 
 }

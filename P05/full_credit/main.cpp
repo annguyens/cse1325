@@ -55,12 +55,13 @@ int main()
 		{
 			if(userQuantity<0 || index <0 || index>std::size(products))
 			{
-				throw std::runtime_error{"\nBad Values!\n"};
+				throw std::runtime_error{"Bad Values!\n"};
 			}
 		}
 		catch(std::runtime_error& e)
 		{
-			std::cerr << "Error: " << e.what() <<"\n\n";
+			std::cout <<"\n";
+			std::cerr << "Error: " << e.what() <<"\n";
 			continue;
 		}		
 		

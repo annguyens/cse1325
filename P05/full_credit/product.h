@@ -4,6 +4,7 @@
 #ifndef __PRODUCT_H
 #define __PRODUCT_H
 
+#include <iomanip>
 #include <string>
 #include <iostream>
 

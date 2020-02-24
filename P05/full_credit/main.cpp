@@ -10,7 +10,7 @@
 int main()
 {
 	int i, userQuantity, index;
-	std::vector<Product*> car;//hiiiiiii
+	std::vector<Product*> cart;
 	Taxfree milk{"Milk", 2.85};
 	Taxfree cookies{"Cookies", 3.99};
 	Taxfree cheese{"Cheese", 0.99};

@@ -55,16 +55,16 @@ int main()
 		{
 			if(userQuantity<0 || index <0 || index>std::size(products))
 			{
-				throw "Bad values entered";
+				throw std::runtime_error{"Bad Values!"};
 			}
 		}
-		catch(const std::string &str)
+		catch(std::runtime_error& e)
 		{
-			std::cerr << "Error: " << str <<"\n";
+			std::cerr << "Error: " << e.what() <<"\n\n";
 			continue;
 		}		
-
-		Product* userProduct= new Product{*products[index]};
+		
+		Product *userProduct= new Product{*products[index]}; 
 		userProduct->set_quantity(userQuantity);
 		cart.push_back(userProduct);
 

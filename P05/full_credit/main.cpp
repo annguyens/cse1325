@@ -46,9 +46,10 @@ int main()
 		}
 	
 		std::cout << "\nEnter quantity (0 to exit) and product index: ";
-		std::cin >> userQuantity >> index;
+		std::cin >> userQuantity;
 		
 		if(userQuantity==0) {break;}
+		else {std::cin>>index;}
 
 		try
 		{

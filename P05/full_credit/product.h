@@ -15,6 +15,7 @@ public:
 	virtual ~Product();
 	void set_quantity(int quantity);
 	virtual double price() const;
+	Product &operator=(const Product &);
 	friend std::ostream& operator<<(std::ostream& ost, const Product& product);
 protected:
 	int _quantity;

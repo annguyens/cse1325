@@ -15,6 +15,16 @@ void Product::set_quantity(int quantity) {_quantity=quantity;}
 
 double Product::price() const {}
 
+Product &Product::operator=(const Product &rhs)
+{
+	if(this!=&rhs)
+	{
+		this->_name=rhs._name;
+		this->_cost=rhs._cost;
+		this->_quantity=rhs._quantity;
+	}
+}
+
 std::ostream& operator<<(std::ostream& ost, const Product& product)
 {
 	if(product._quantity ==0)

@@ -28,7 +28,7 @@ int main()
 			  << "  Welcome to the Store  \n"
 			  << "========================\n" << std::endl;	
 		
-		for(i=0; i<std::size(products); i++)
+		for(i=0; i<(sizeof(products)/sizeof(products[i])); i++)
 		{
 			std::cout << std::to_string(i) << ") " << *products[i];
 		}
@@ -53,7 +53,7 @@ int main()
 
 		try
 		{
-			if(userQuantity<0 || index <0 || index>std::size(products))
+			if(userQuantity<0 || index <0 || index>(sizeof(products)/ sizeof(products[i]))-1)
 			{
 				throw std::runtime_error{"Bad Values!\n"};
 			}

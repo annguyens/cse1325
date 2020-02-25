@@ -20,8 +20,8 @@ int main()
 	Taxed poptarts{"Poptarts", 0.99};
 	test3.str("Poptarts ($0.99)\n");
 	test4 << poptarts;
-	if(test3.str()!= test4.str()){std::cerr << "FAIL!!!\n";}//
+	if(test3.str()!= test4.str()){std::cerr << "FAIL\n";}//
 
 	poptarts.set_quantity(3);
-	if(poptarts.price() != (3*0.99*1.0825)) std::cerr << "FAIL!!!!\n";//
+	if(poptarts.price() != (3*0.99*1.0825)) std::cerr << "FAIL\n";//
 }

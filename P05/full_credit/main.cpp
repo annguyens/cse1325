@@ -65,9 +65,9 @@ int main()
 			continue;
 		}		
 		
-		Product *userProduct= new Product{*products[index]}; 
-		userProduct->set_quantity(userQuantity);
-		cart.push_back(userProduct);
+		Product &userProduct{ *products[index] };
+		userProduct.set_quantity(userQuantity);
+		cart.push_back(&userProduct);
 
 		std::cout << "\n";
 		

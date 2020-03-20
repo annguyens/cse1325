@@ -3,7 +3,11 @@
 
 #include "desktop.h"
 
-void Desktop::add_option(Options& option) {options.push_back(&option);}
+void Desktop::add_option(Options& option) 
+{
+	//Options* opt = new Options{option};
+	options.push_back(&option);
+}
 
 double Desktop::price() const
 {

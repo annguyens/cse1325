@@ -44,15 +44,9 @@ int Store::new_desktop()
 	return (std::distance(desktops.begin(),std::find(desktops.begin(),desktops.end(),desktop)));
 }
 
-/*
-add_option / add_desktop, which is given the index of the option to add to the desktop at the
-provided index / the index of the desktop to add to the order at the provided index. Thus,
-these two methods are used to add an existing option / desktop to an existing desktop / order.
-*/
-
 void Store::add_option(int option, int desktop)
 {
-	desktops.insert(desktops.begin()+desktop, options.at(option));
+	(desktops.at(desktop)).add_option(*options.at(option));
 }
 
 int Store::num_desktops() {return desktops.size();}
@@ -61,14 +55,14 @@ Desktop& Store::desktop(int index) {return desktops.at(index);}
 
 int Store::new_order(int customer) 
 {
-	Order order{customer};
+	Order order{customers[customer]};
 	orders.push_back(order);
 	return (std::distance(orders.begin(),std::find(orders.begin(),orders.end(),order)));
 }
 
 void Store::add_desktop(int desktop, int order) 
 {
-	orders.insert(orders.begin()+order, desktops.at(desktop));
+	int x = (orders.at(order)).add_product(desktops.at(desktop));
 }
 
 int Store::num_orders() {return orders.size();}

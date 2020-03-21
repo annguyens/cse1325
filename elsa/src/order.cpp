@@ -27,7 +27,7 @@ std::ostream& operator<<(std::ostream& ost, const Order& order)
 	ost << "\tCustomer Information: \n" << order._customer << "\n\n"
 	<< "\tItems:\n";
 	for(auto v: order._products)
-		ost << v;
+		ost << " - " << v;
 	ost << "\n\t***Total Cost: $" << std::fixed << std::setprecision(2)<<
 	order.price() << "***\n";
 	return ost;

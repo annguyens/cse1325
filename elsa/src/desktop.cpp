@@ -15,7 +15,7 @@ double Desktop::price() const
 
 std::ostream& operator<<(std::ostream& ost, const Desktop& desktop)
 {
-	ost << "Desktop contents:\n";
+	ost << "Desktop Configurations:\n";
 	for(auto v: desktop.options)
 		ost<< *v <<"\n";
 	return ost;

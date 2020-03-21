@@ -41,7 +41,7 @@ int Store::new_desktop()
 {
 	Desktop desktop;
 	desktops.push_back(desktop);
-	return (std::distance(desktops.begin(),std::find(desktops.begin(),desktops.end(),desktop)));
+	return desktops.size()-1;
 }
 
 void Store::add_option(int option, int desktop)
@@ -57,7 +57,7 @@ int Store::new_order(int customer)
 {
 	Order order{customers[customer]};
 	orders.push_back(order);
-	return (std::distance(orders.begin(),std::find(orders.begin(),orders.end(),order)));
+	return orders.size()-1;
 }
 
 void Store::add_desktop(int desktop, int order) 

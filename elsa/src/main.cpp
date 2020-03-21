@@ -26,6 +26,7 @@ Command? )";
 
         // LIST ORDERS
         if(cmd == 'o') {
+		std::cout << "\n";
             for(int i=0; i<store.num_orders(); ++i) 
                 std::cout << i << ") " << store.order(i) << "\n";
 
@@ -36,7 +37,7 @@ Command? )";
             std::cout << "Customer? ";
             int customer;
             std::cin >> customer; std::cin.ignore(32767, '\n');
-
+		std::cout << "\n";
             int order = store.new_order(customer);
 
             while(true) {
@@ -48,7 +49,7 @@ Command? )";
                 if(desktop == -1) break;
                 store.add_desktop(desktop, order);
             }
-            std::cout << "\n++++ Order Placed ++++\n" << store.order(order);
+            std::cout << "\n\t++++++ Order Placed ++++++\n\n" << store.order(order);
 
         // LIST CUSTOMERS
         } else if (cmd == 'c') {
@@ -74,13 +75,13 @@ Command? )";
         // LIST ALL PRODUCTS
         } else if (cmd == 'd') {
                 for(int i=0; i<store.num_desktops(); ++i) 
-                    std::cout << i << ") " << store.desktop(i) << "\n";
+                    std::cout << "\n" << i << ") " << store.desktop(i);
 
         // CREATE A NEW PRODUCT FROM OPTIONS
         } else if (cmd == 'D') {
             int desktop = store.new_desktop();
             while(true) {
-                std::cout << store.desktop(desktop) << "\n\n";
+                std::cout << "\n" << store.desktop(desktop) << "\n";
                 for(int i=0; i<store.num_options(); ++i) 
                    std::cout << i << ") " << store.option(i) << '\n';
                 std::cout << "\nAdd which peripheral (-1 when done)? ";

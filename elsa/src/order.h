@@ -8,6 +8,7 @@
 #include "desktop.h"
 #include <vector>
 #include <iostream>
+#include <iomanip>
 
 class Order
 {
@@ -19,7 +20,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& ost, const Order& order);
 private:
 	Customer& _customer;
-	std::vector<Desktop*> _products;
+	std::vector<Desktop> _products;
 };
 
 #endif

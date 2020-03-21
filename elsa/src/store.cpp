@@ -18,7 +18,11 @@ Customer& Store::customer(int index)
 	return customers.at(index);
 }
 
-void Store::add_option(Options& option) {options.push_back(&option);}// Pass by reference
+void Store::add_option(Options& option) 
+{
+	Options* opt = new Options{option};
+	options.push_back(opt);
+}
 
 int Store::num_options() {return options.size();}
 
@@ -33,9 +37,6 @@ Options& Store::option(int index)
 	}
 	return *options.at(index);
 }
-
-////////////////////////////
-///////////////////////////
 
 int Store::new_desktop() 
 {

@@ -10,23 +10,25 @@ Order::~Order() {}
 
 int Order::add_product(Desktop& desktop) 
 {
-_products.push_back(&desktop);
-return (_products.size()-1);//index of desktop OR size of order
+	_products.push_back(desktop);
+	return (_products.size()-1);//index of desktop OR size of order
 }
 
 double Order::price() const
 {
 	double sum = 0;
 	for(auto v: _products)
-		sum = sum + v->price();
+		sum = sum + v.price();
 	return sum;
 }
 
 std::ostream& operator<<(std::ostream& ost, const Order& order)
 {
-	ost << order._customer << "\n";
+	ost << "\tCustomer Information: \n" << order._customer << "\n\n"
+	<< "\tItems:\n";
 	for(auto v: order._products)
-		ost<< *v;
-	ost << "\nTotal Cost: " << std::to_string(order.price()) <<"\n";
+		ost << v;
+	ost << "\n\t***Total Cost: $" << std::fixed << std::setprecision(2)<<
+	order.price() << "***\n";
 	return ost;
 }

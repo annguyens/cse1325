@@ -17,6 +17,6 @@ std::ostream& operator<<(std::ostream& ost, const Desktop& desktop)
 {
 	ost << "Desktop Configurations:\n";
 	for(auto v: desktop.options)
-		ost<< *v <<"\n";
+		ost<< "   " << *v <<"\n";
 	return ost;
 }

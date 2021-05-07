@@ -1,0 +1,82 @@
+QUESTION 1: Which value of slices did you select for your machine to solve the polynomial with 1 thread with at least a 30 second runtime: 
+slices=190000000
+
+
+QUESTION 2: Provide the output of ``time polyb nn`` (or the improved version in the lecture video, if you prefer) for the following values of nn threads shown below:
+
+Example Timing:
+
+real	0m22.551s
+user	0m22.524s
+sys	0m0.012s
+
+
+YOUR Timing:
+
+Without threads:
+
+real	0m39.956s
+user	0m39.894s
+sys	0m0.004s
+
+
+
+With 2 threads:
+
+real	0m44.524s
+user	1m28.876s
+sys	0m0.032s
+
+
+
+With 4 threads:
+
+real	1m40.683s
+user	3m20.879s
+sys	0m0.084s
+
+
+
+With 6 threads:
+
+real	2m27.502s
+user	4m54.030s
+sys	0m0.084s
+
+
+
+With 8 threads:
+
+real	3m3.960s
+user	6m6.674s
+sys	0m0.172s
+
+
+
+With 12 threads:
+
+real	4m26.675s
+user	8m52.747s
+sys	0m0.128s
+
+
+
+With 24 threads:
+
+
+
+
+
+QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
+
+In theory more threads should speed up the program (unfortunately not in my case..), but eventually there reaches a certain number of threads, "n", which results in the best throughput. After "n" threads the program should start to slightly slow down/plateau because there are so many threads being queued/clogged at a certain point of instruction (like when we locked the mutex).
+
+
+
+QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
+
+More threads increase the "system load" since they are going to stack up. For example, when we locked the mutex and only allow one thread to access an instruction at a time, other threads will accumulate in a queue resulting in an increase of active threads/processes.
+
+
+
+
